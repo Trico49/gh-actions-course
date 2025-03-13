@@ -1,10 +1,8 @@
 name: 02 - Workflow Events
 
 on: 
-  pull_request:
   workflow_dispatch:
-
-
+  
 jobs:
   echo:
     runs-on: ubuntu-latest
