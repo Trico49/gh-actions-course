@@ -1,6 +1,8 @@
 name: 06 - Contexts
 
-on: push
+on: 
+ push:
+ workflows_dispatch:
 
 jobs:
     echo-data:
