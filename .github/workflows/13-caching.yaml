@@ -15,15 +15,15 @@ on:
          - 20.x
          - 21.x
        default: 20.x
-       
+
 jobs:
   install-deps:
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: 13-caching/react-app
-      outputs:
-        deps-cache-key: ${{ steps.cache-key.outputs.CACHE_KEY }}
+    outputs:
+      deps-cache-key: ${{ steps.cache-key.outputs.CACHE_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
