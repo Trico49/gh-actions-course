@@ -33,7 +33,7 @@ jobs:
           uses: actions/upload-artifact@v3
           with:
             name: app
-            path: 14-artifacts/react-app/build
+            path: 14-artifacts/react-app/build 
   deploy:
     runs-on: ubuntu-latest 
     steps:
