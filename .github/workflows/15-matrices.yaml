@@ -34,19 +34,18 @@ jobs:
           sleep 10
       - name: Upload test results
         run: echo "Uploading test results" 
-include-example:
-  name: ${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}
-  runs-on: ubuntu-latest
-  strategy:
-    matrix:
-      color: [red, green]
-      shape: [circle, square]
-      size: [small,large]
-      include:
-        - color: red
-          shape: triangle
-          size: medium
-
-  steps:
-    - name: Dummy step
-    - run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}"
+  include-example:
+    - name: ${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          color: [red, green]
+          shape: [circle, square]
+          size: [small,large]
+          include:
+            - color: red
+              shape: triangle
+          
+      steps:
+        - name: Dummy step
+        - run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}"
