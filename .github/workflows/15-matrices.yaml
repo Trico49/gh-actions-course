@@ -46,3 +46,7 @@ include-example:
         - color: red
           shape: triangle
           size: medium
+
+  steps:
+    - name: Dummy step
+    - run: echo "${{ matrix.color }}-${{ matrix.shape }}-${{ matrix.size }}"
