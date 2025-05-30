@@ -8,7 +8,7 @@ inputs:
     required: true
   working-dir: 
     description: The working directory of the application
-    default: '.'
+    default: .
     required: false
 runs:
   using: "composite"
@@ -26,4 +26,5 @@ runs:
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: npm ci
+      shell: bash
       working-directory: ${{ inputs.working-dir }}
