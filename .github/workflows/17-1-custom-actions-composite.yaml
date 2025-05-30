@@ -13,7 +13,7 @@ jobs:
                 working-directory: ${{ env.working-directory }}
         steps:
             - name: Checkout Code
-            - uses: actions/checkout@v4
+              uses: actions/checkout@v4
             - name:  Setup Node and NPM Dependencies
               uses: ./.github/actions/composite-cache-deps
               with:
