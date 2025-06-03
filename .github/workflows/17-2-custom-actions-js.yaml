@@ -2,7 +2,7 @@ name: 17 - 2 - Custom Actions - JS
 run-name: 17 - 2 - Custom Actions - JS | BB - ${{ inputs.base-branch }} | TB - ${{ inputs.target-branch }} | WD - ${{ inputs.working-dir }}
 
 on: 
-   workflow_dispatch:
+  workflow_dispatch:
     inputs:
       base-branch:
         type: string
@@ -13,20 +13,20 @@ on:
       working-directory:
         type: string
         default: 17-custom-actions/react-app
+      debug:
+        type: boolean
+        default: false
 
 jobs:
   dependency-update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Check for dependency updates
         uses: ./.github/actions/js-dependency-update
         with:
           base-branch: ${{ inputs.base-branch }}
           target-branch: ${{ inputs.target-branch }}
-          working-directory: ${{ inputs.working-dir }}
-          
-              
-             
-              
-            
+          working-directory: ${{ inputs.working-directory }}
+          debug: '${{ inputs.debug }}'
