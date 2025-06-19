@@ -12,9 +12,8 @@ jobs:
   ping-url:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - uses: actions/checkout@v4
       - name: Ping URL
-        uses: ./.github/actions/docker-ping-url/venv/
+        uses: ./.github/actions/docker-ping-url
         with:
           url: ${{ inputs.url }}
