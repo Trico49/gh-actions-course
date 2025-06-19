@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       url:
+        description: 'The URL to ping'
         type: string
         default: 'https://google.com'
 
@@ -11,8 +12,10 @@ jobs:
   ping-url:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Ping URL
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run Ping Docker Action
         uses: ./.github/actions/docker-ping-url
         with:
           url: ${{ inputs.url }}
